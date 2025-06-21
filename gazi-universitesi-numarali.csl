@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Gazi Üniversitesi Sağlık Bilimleri - Numaralı Stil</title>
+    <id>http://www.zotero.org/styles/gazi-universitesi-numarali</id>
+    <link href="http://www.zotero.org/styles/gazi-universitesi-numarali" rel="self"/>
+    <author>
+      <name>ChatGPT</name>
+    </author>
+    <category citation-format="numeric"/>
+    <updated>2025-06-21T00:00:00+00:00</updated>
+  </info>
+
+  <citation collapse="citation-number">
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography et-al-min="7" et-al-use-first="6" second-field-align="flush">
+    <layout suffix=".">
+      <text variable="citation-number" prefix="[" suffix="] "/>
+      <choose>
+        <if type="book">
+          <text variable="author" suffix=". "/>
+          <text variable="title" font-style="italic" suffix=". "/>
+          <text variable="publisher" suffix=", "/>
+          <text variable="publisher-place" suffix=", "/>
+          <date variable="issued">
+            <date-part name="year"/>
+          </date>
+        </if>
+        <else-if type="article-journal">
+          <text variable="author" suffix=". "/>
+          <text variable="title" suffix=". "/>
+          <text variable="container-title" font-style="italic" suffix=". "/>
+          <text variable="volume" suffix="(" />
+          <text variable="issue" suffix="):" />
+          <text variable="page" suffix=". "/>
+          <date variable="issued">
+            <date-part name="year"/>
+          </date>
+        </else-if>
+        <else-if type="thesis">
+          <text variable="author" suffix=". "/>
+          <text variable="title" font-style="italic" suffix=". "/>
+          <text variable="genre" suffix=". "/>
+          <text variable="publisher" suffix=", "/>
+          <date variable="issued">
+            <date-part name="year"/>
+          </date>
+        </else-if>
+        <else-if type="webpage">
+          <text variable="author" suffix=". "/>
+          <text variable="title" suffix=". "/>
+          <text variable="URL" suffix=". "/>
+          <date variable="accessed" prefix="Erişim tarihi: ">
+            <date-part name="day" suffix=" "/>
+            <date-part name="month" suffix=" "/>
+            <date-part name="year"/>
+          </date>
+        </else-if>
+        <else>
+          <text variable="author" suffix=". "/>
+          <text variable="title" suffix=". "/>
+          <text variable="container-title" suffix=". "/>
+          <date variable="issued">
+            <date-part name="year"/>
+          </date>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
